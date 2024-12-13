@@ -148,7 +148,7 @@ class Network(nn.Module):
 
         # avg pool, 1000 fc and softmax
         self.avg_pool = AdaptiveAvgPool2d((1,1)) # pytorch's implementation uses adaptive. Not sure what's the diff
-        self.fc = Linear(64,num_classes) # 1000 dim fc
+        self.fc = Linear(64,num_classes) # usually 1000 dim fc, but depends on the number of classes you need to classify
         self.softmax = Softmax(dim = 1)
 
     def forward(self, input):
